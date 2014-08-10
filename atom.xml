@@ -4,7 +4,7 @@
   <title><![CDATA[CSS Refactoring]]></title>
   <link href="http://roblevintennis.github.io/cssrefactoring/atom.xml" rel="self"/>
   <link href="http://roblevintennis.github.io/cssrefactoring/"/>
-  <updated>2014-08-10T09:13:57-07:00</updated>
+  <updated>2014-08-10T09:20:10-07:00</updated>
   <id>http://roblevintennis.github.io/cssrefactoring/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -95,7 +95,19 @@ With these checks and refactoring I got rid of about 10% of our stylesheets, whi
     <link href="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/"/>
     <updated>2014-08-10T08:54:42-07:00</updated>
     <id>http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet</id>
-    <content type="html"><![CDATA[<h1>Typography</h1>
+    <content type="html"><![CDATA[<h1>Code Example using Github Markdown</h1>
+
+<pre><code class="css">.foo {
+    color: red;
+}
+</code></pre>
+
+<pre><code class="javascript">function foo(str) {
+    return str + '...omg this is awesome!';
+}
+</code></pre>
+
+<h1>Typography</h1>
 
 <h2>Headings</h2>
 
