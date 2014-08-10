@@ -1,101 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[CSS Refactoring]]></title>
-  <link href="http://roblevintennis.github.io/cssrefactoring/atom.xml" rel="self"/>
-  <link href="http://roblevintennis.github.io/cssrefactoring/"/>
-  <updated>2014-08-10T09:13:57-07:00</updated>
-  <id>http://roblevintennis.github.io/cssrefactoring/</id>
-  <author>
-    <name><![CDATA[Your Name]]></name>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Markdown: Cheat Sheet - CSS Refactoring</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Typography Headings Headings from h1 through h6 are constructed with a # for each level: # h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet">
+  <link href="/cssrefactoring/favicon.png" rel="icon">
+  <link href="/cssrefactoring/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/cssrefactoring/atom.xml" rel="alternate" title="CSS Refactoring" type="application/atom+xml">
+  <script src="/cssrefactoring/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/cssrefactoring/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/cssrefactoring/">CSS Refactoring</a></h1>
+  
+    <h2>Alex Wolfe, Rob Levin, Trever Yarrish</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/cssrefactoring/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:roblevintennis.github.io/cssrefactoring" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/cssrefactoring/">Blog</a></li>
+  <li><a href="/cssrefactoring/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
     
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+      <h1 class="entry-title">Markdown: Cheat Sheet</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
 
   
-  <entry>
-    <title type="html"><![CDATA[Ideas for Book]]></title>
-    <link href="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/ideas-for-book/"/>
-    <updated>2014-08-10T08:58:45-07:00</updated>
-    <id>http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/ideas-for-book</id>
-    <content type="html"><![CDATA[<h1>CSS Refactoring Ideas</h1>
 
-<p>Just some ideas that could become chapters or sections</p>
 
-<h2>Convincing Management of the Benefits</h2>
+<time datetime="2014-08-10T08:54:42-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
 
-<h2>Content Audit</h2>
 
-<p>Alex has a strategy for this which might be interesting to put in here.</p>
-
-<h2>Our spin on OOCSS and SMACSS and general best practices</h2>
-
-<p>We can do our own take on these and more .. intent is to ramp up reader on best practices. This section needs to be short.</p>
-
-<h2>Global Search and Regular Expressions</h2>
-
-<p>I saw this example at: <a href="http://wildbit.com/blog/2012/04/16/refactoring-14000-lines-of-css-into-sass/">http://wildbit.com/blog/2012/04/16/refactoring-14000-lines-of-css-into-sass/</a></p>
-
-<p>Removing Ghost Selectors with Regular Expressions</p>
-
-<p>Well, it happens — you redesign some element and forget to clean up old CSS afterwards, which makes the code bloated, increases file size and decreases performance. I spent a day checking if most of our CSS selectors existed in design mockups or development code. Consistent code formatting and simple regexps come in handy here. I used these ones the most:</p>
-
-<p>[&ldquo; ]classname — is this class name ever used?
-h3.*classname — is this class name ever used with h3 element?
-With these checks and refactoring I got rid of about 10% of our stylesheets, which is much more than I expected.</p>
-
-<h2>Tools</h2>
-
-<h4>CSS Dig <a href="http://atomeye.com/css-dig.html">http://atomeye.com/css-dig.html</a></h4>
-
-<h4>autoprefixer</h4>
-
-<h4>CSSCSS</h4>
-
-<h4>CSS Comb</h4>
-
-<h4>stylestats</h4>
-
-<p>Applying these tools to legacy styles</p>
-
-<h2>Safely Refactoring</h2>
-
-<p>Discuss a step by step strategy for safely extracting out modules, restructuring, etc.</p>
-
-<h4>Module Based Refactorings</h4>
-
-<p>For example, like the palette function I created for Mavenelink or table tease apart Trever and I did. We might want to borrow from the Refactoring idiomatic refactorings e.g. &ldquo;Extract Method&rdquo; could become &ldquo;Extract Module&rdquo;. Mention Open/Closed principle and how base module should comply.</p>
-
-<h4>Patterns</h4>
-
-<p>Might be interesting to emulate some of the standard Refactoring literature out there e.g. Martin Fowler&rsquo;s  &ldquo;Pull Up&rdquo; etc. Not all of them just the ones that make sense</p>
-
-<p><a href="http://refactoring.com/catalog/">http://refactoring.com/catalog/</a> (and Rob has the book)</p>
-
-<h4>Removing overqualified selectors</h4>
-
-<h4>Remove duplication DRY or Single Responsibility Principle</h4>
-
-<p>Perhaps using tools like CSSCSS</p>
-
-<h2>Future Proofing Your Refactoring</h2>
-
-<h3>Styleguide</h3>
-
-<h3>Pattern Library</h3>
-
-<h1>Promoting the Book</h1>
-
-<p>TBD</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Markdown: Cheat Sheet]]></title>
-    <link href="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/"/>
-    <updated>2014-08-10T08:54:42-07:00</updated>
-    <id>http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet</id>
-    <content type="html"><![CDATA[<h1>Typography</h1>
+<div class="entry-content"><h1>Typography</h1>
 
 <h2>Headings</h2>
 
@@ -125,7 +124,7 @@ With these checks and refactoring I got rid of about 10% of our stylesheets, whi
 
 <p>HTML:</p>
 
-<p>&#8220;` html</p>
+<p>``` html</p>
 
 <h1>h1 Heading</h1>
 
@@ -181,10 +180,10 @@ So this body copy:
 </code></pre>
 
 <p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.
-&#8220;`
+```
 renders to this HTML:</p>
 
-<p>&#8220;` html</p>
+<p>``` html</p>
 
 <p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
 
@@ -205,7 +204,7 @@ The following snippet of text is **rendered as bold text**.
 </code></pre>
 
 <p><strong>rendered as bold text</strong>
-&#8220;`
+```
 renders to:</p>
 
 <p><strong>rendered as bold text</strong></p>
@@ -263,7 +262,7 @@ renders to:</p>
 
 <p>and this HTML:</p>
 
-<p>&#8220;` html</p>
+<p>``` html</p>
 
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
@@ -282,7 +281,7 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 
 <blockquote><p>Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue.
 Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
-&#8220;`</p></blockquote></blockquote></blockquote>
+```</p></blockquote></blockquote></blockquote>
 
 <p>Renders to:</p>
 
@@ -352,7 +351,7 @@ Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.</p></blockquote></
 
 <p>And this HTML</p>
 
-<p>&#8220;` html</p>
+<p>``` html</p>
 
 <ul>
   <li>Lorem ipsum dolor sit amet</li>
@@ -388,7 +387,7 @@ A list of items in which the order of items does explicitly matter.
 <li>Faucibus porta lacus fringilla vel</li>
 <li>Aenean sit amet erat nunc</li>
 <li><p>Eget porttitor lorem
-&#8220;`
+```
 Renders to:</p></li>
 <li><p>Lorem ipsum dolor sit amet</p></li>
 <li>Consectetur adipiscing elit</li>
@@ -403,7 +402,7 @@ Renders to:</p></li>
 
 <p>And this HTML:</p>
 
-<p>&#8220;` html</p>
+<p>``` html</p>
 
 <ol>
   <li>Lorem ipsum dolor sit amet</li>
@@ -430,7 +429,7 @@ Renders to:</p></li>
 <li>Faucibus porta lacus fringilla vel</li>
 <li>Aenean sit amet erat nunc</li>
 <li>Eget porttitor lorem
-&#8220;`</li>
+```</li>
 </ol>
 
 
@@ -495,14 +494,14 @@ Sample text here...
 
 <p>HTML:</p>
 
-<p>&#8220;` html</p>
+<p>``` html</p>
 
 <pre>
   <p>Sample text here...</p>
 </pre>
 
 
-<p>&#8220;`</p>
+<p>```</p>
 
 <h3>Syntax highlighting</h3>
 
@@ -556,7 +555,7 @@ grunt.initConfig({
 
 <p>And this complicated HTML:</p>
 
-<p>&#8220;` xml</p>
+<p>``` xml</p>
 
 <div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
   <span class="nx">assemble</span><span class="o">:</span> <span class="p">{</span>
@@ -596,7 +595,7 @@ Tables are created by adding pipes as dividers between each cell, and by adding 
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-&#8220;`</p>
+```</p>
 
 <p>Renders to:</p>
 
@@ -626,7 +625,7 @@ Tables are created by adding pipes as dividers between each cell, and by adding 
 
 <p>And this HTML:</p>
 
-<p>&#8220;` html</p>
+<p>``` html</p>
 
 <table>
   <tr>
@@ -659,7 +658,7 @@ Adding a colon on the right side of the dashes below any heading will right alig
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-&#8220;`</p>
+```</p>
 
 <table>
 <thead>
@@ -773,7 +772,108 @@ Content for chapter one.
 
 <pre><code>[id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 </code></pre>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-</feed>
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-10T08:54:42-07:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/" data-via="" data-counturl="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/cssrefactoring/blog/2014/08/10/ideas-for-book/" title="Next Post: Ideas for Book">Ideas for Book &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/cssrefactoring/blog/2014/08/10/ideas-for-book/">Ideas for Book</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/">Markdown: Cheat Sheet</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

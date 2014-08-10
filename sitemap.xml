@@ -2,19 +2,45 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   
+  <url>
+    <loc>http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/ideas-for-book/</loc>
+    <lastmod>2014-08-10T08:58:45-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/</loc>
+    <lastmod>2014-08-10T08:54:42-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
   
   <url>
     <loc>http://roblevintennis.github.io/cssrefactoring/blog/archives/</loc>
-    <lastmod>2014-08-10T07:59:33-07:00</lastmod>
+    <lastmod>2014-08-10T09:13:57-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://roblevintennis.github.io/cssrefactoring/</loc>
-    <lastmod>2014-08-10T07:59:33-07:00</lastmod>
+    <lastmod>2014-08-10T09:13:57-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://roblevintennis.github.io/cssrefactoring/convincing-management/</loc>
+    <lastmod>2014-08-10T09:13:57-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://roblevintennis.github.io/cssrefactoring/about-the-authors/</loc>
+    <lastmod>2014-08-10T09:13:57-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   

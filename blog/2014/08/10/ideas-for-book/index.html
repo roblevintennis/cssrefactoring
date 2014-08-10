@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ideas for Book - CSS Refactoring</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="CSS Refactoring Ideas Just some ideas that could become chapters or sections Convincing Management of the Benefits Content Audit Alex has a strategy &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/ideas-for-book">
+  <link href="/cssrefactoring/favicon.png" rel="icon">
+  <link href="/cssrefactoring/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/cssrefactoring/atom.xml" rel="alternate" title="CSS Refactoring" type="application/atom+xml">
+  <script src="/cssrefactoring/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/cssrefactoring/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/cssrefactoring/">CSS Refactoring</a></h1>
+  
+    <h2>Alex Wolfe, Rob Levin, Trever Yarrish</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/cssrefactoring/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:roblevintennis.github.io/cssrefactoring" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/cssrefactoring/">Blog</a></li>
+  <li><a href="/cssrefactoring/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ideas for Book</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-10T08:58:45-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>CSS Refactoring Ideas</h1>
+
+<p>Just some ideas that could become chapters or sections</p>
+
+<h2>Convincing Management of the Benefits</h2>
+
+<h2>Content Audit</h2>
+
+<p>Alex has a strategy for this which might be interesting to put in here.</p>
+
+<h2>Our spin on OOCSS and SMACSS and general best practices</h2>
+
+<p>We can do our own take on these and more .. intent is to ramp up reader on best practices. This section needs to be short.</p>
+
+<h2>Global Search and Regular Expressions</h2>
+
+<p>I saw this example at: <a href="http://wildbit.com/blog/2012/04/16/refactoring-14000-lines-of-css-into-sass/">http://wildbit.com/blog/2012/04/16/refactoring-14000-lines-of-css-into-sass/</a></p>
+
+<p>Removing Ghost Selectors with Regular Expressions</p>
+
+<p>Well, it happens — you redesign some element and forget to clean up old CSS afterwards, which makes the code bloated, increases file size and decreases performance. I spent a day checking if most of our CSS selectors existed in design mockups or development code. Consistent code formatting and simple regexps come in handy here. I used these ones the most:</p>
+
+<p>[&ldquo; ]classname — is this class name ever used?
+h3.*classname — is this class name ever used with h3 element?
+With these checks and refactoring I got rid of about 10% of our stylesheets, which is much more than I expected.</p>
+
+<h2>Tools</h2>
+
+<h4>CSS Dig <a href="http://atomeye.com/css-dig.html">http://atomeye.com/css-dig.html</a></h4>
+
+<h4>autoprefixer</h4>
+
+<h4>CSSCSS</h4>
+
+<h4>CSS Comb</h4>
+
+<h4>stylestats</h4>
+
+<p>Applying these tools to legacy styles</p>
+
+<h2>Safely Refactoring</h2>
+
+<p>Discuss a step by step strategy for safely extracting out modules, restructuring, etc.</p>
+
+<h4>Module Based Refactorings</h4>
+
+<p>For example, like the palette function I created for Mavenelink or table tease apart Trever and I did. We might want to borrow from the Refactoring idiomatic refactorings e.g. &ldquo;Extract Method&rdquo; could become &ldquo;Extract Module&rdquo;. Mention Open/Closed principle and how base module should comply.</p>
+
+<h4>Patterns</h4>
+
+<p>Might be interesting to emulate some of the standard Refactoring literature out there e.g. Martin Fowler&rsquo;s  &ldquo;Pull Up&rdquo; etc. Not all of them just the ones that make sense</p>
+
+<p><a href="http://refactoring.com/catalog/">http://refactoring.com/catalog/</a> (and Rob has the book)</p>
+
+<h4>Removing overqualified selectors</h4>
+
+<h4>Remove duplication DRY or Single Responsibility Principle</h4>
+
+<p>Perhaps using tools like CSSCSS</p>
+
+<h2>Future Proofing Your Refactoring</h2>
+
+<h3>Styleguide</h3>
+
+<h3>Pattern Library</h3>
+
+<h1>Promoting the Book</h1>
+
+<p>TBD</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-10T08:58:45-07:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/ideas-for-book/" data-via="" data-counturl="http://roblevintennis.github.io/cssrefactoring/blog/2014/08/10/ideas-for-book/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/" title="Previous Post: Markdown: Cheat Sheet">&laquo; Markdown: Cheat Sheet</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/cssrefactoring/blog/2014/08/10/ideas-for-book/">Ideas for Book</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/">Markdown: Cheat Sheet</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
