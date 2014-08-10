@@ -6,6 +6,20 @@ comments: true
 categories:
 ---
 
+# Code Example using Github Markdown
+
+```css
+.foo {
+	color: red;
+}
+```
+
+```javascript
+function foo(str) {
+	return str + '...omg this is awesome!';
+}
+```
+
 # Typography
 
 ## Headings
