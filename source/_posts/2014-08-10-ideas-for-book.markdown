@@ -42,6 +42,10 @@ With these checks and refactoring I got rid of about 10% of our stylesheets, whi
 
 Applying these tools to legacy styles
 
+## Case Study: Buttons
+
+## Case Study: TBD–some open source refactor???
+
 ## Safely Refactoring
 
 Discuss a step by step strategy for safely extracting out modules, restructuring, etc.
