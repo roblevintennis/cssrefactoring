@@ -18,10 +18,12 @@ git remote add origin git@github.com:roblevintennis/cssrefactoring.git
 *Do not push directly to `gh-pages` branch as it will bork the Octopress deploy task*
 
 ```shell
-git commit -m"your message";
+git commit -m"your message";#commits your work on [master] branch
 rake generate
 rake preview #now go to: http://localhost:4000/cssrefactoring and verify changes
 rake deploy #will push _deploy dir to gh-pages branch
+# Now that you've deployed to gh-pages, you still need to commit to the [master] branch:
+git push origin master
 ```
 
 ## Where's the book?
