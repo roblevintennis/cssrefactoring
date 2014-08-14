@@ -10,13 +10,17 @@ footer: true
 
 # Achieving CSS Nirvana
 
-If we're going to refactor crufty legacy code into maintainable works of art, we need to have an idea on what exactly is &ldquo;good CSS&rdquo;? Obviously, this is somewhat subjective, but there are some agreed upon general guidelines that are quite helpful here. Two resources we like are [OOCSS](http://oocss.org/) and [SMACSS](https://smacss.com/). If you haven't had a chance to read up on those we highly recommend that you do so.
+If we're going to refactor crufty legacy code into maintainable works of art, we need to have an idea on what exactly is &ldquo;good CSS&rdquo;? Two resources which help with this question are: [OOCSS](http://oocss.org/) and [SMACSS](https://smacss.com/). If you haven't had a chance to read up on those we highly recommend that you do so. In this section we will paraphrase some of the more useful ideas in these systems while adding our own spin on what makes CSS more reusable and maintainable.
 
-This section will paraphrase some of the more useful ideas in these systems while adding our own spin on what makes CSS more reusable and maintainable. These concepts are abstract in nature so don't worry if you don't fully understand them here–we will delve deeper with examples in subsequent chapters.
+*These concepts are abstract in nature so don't worry if you don't fully understand them here–we will delve deeper with examples in subsequent chapters.*
+
+## CSS Systems
+
+Provide an overview and discuss how the combination of modules, layouts, states, etc., etc., create a complete CSS System for a web site or application. **TBD**
 
 ## Modules
 
-Essentially, a module is an abstract representation of a distinct component such as a button, icon, media box, etc. There's been a ton of writing in the community on this topic and you may hear of similar ideas like: Brad Frost's notion of [atoms and molecules](http://bradfrostweb.com/blog/post/atomic-web-design/), Stephen Hay's notion of [designing a system of components ](http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/), or Nicole Sullivan's notion of [CSS Objects](https://github.com/stubbornella/oocss/wiki#whats-a-css-object). What are the common benefits of all of these ideas? Well, if you're coming from a programming background you'll be happy that you can leverage some of the ideas you learned there:
+Essentially, a module is an abstract representation of a distinct component such as a button, icon, media box, etc. There's been a ton of writing in the community on the topic and you may have heard of similar ideas such as: Brad Frost's notion of [atoms and molecules](http://bradfrostweb.com/blog/post/atomic-web-design/), Stephen Hay's notion of [designing a system of components ](http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/), or Nicole Sullivan's notion of [CSS Objects](https://github.com/stubbornella/oocss/wiki#whats-a-css-object). What are the common benefits of all of these ideas? Here are some:
 
 * **Reusability:** A module can be used anywhere on layouts and pages
 * **Modules can be nested:** As alluded to in the last point, a module can nest other modules within it. These are often interchangibly referred to a sub-modules or sub-components
@@ -26,9 +30,40 @@ Essentially, a module is an abstract representation of a distinct component such
 * **Orthogonality:** Russ Weakley states beautifully that modules must be ["location agnostic"](http://www.slideshare.net/maxdesign/css-oocss-and-smacss) in that they are independent of the location of their use. This notion works in tandem with SRP
 * **Encapsulation:** With SRP and orthogonality we also achieve encapsulation as well
 
+*If you're coming from a programming background you'll be happy to know that you can leverage some of the ideas you've already learned!*
+
+
+## How are modules implemented?
+
 ### Module Namespace
 
-Modules start with a _base class_ that acts as the module's *namespace*. So a Button module's base class might be represented with the CSS class `.button` or `.btn`. In fact, if you'd like a very visual representation of this idea, go to [our own Buttons library](http://alexwolfe.github.io/Buttons/) and click the Customize button. In the popup you'll notice the input labeled Namespace. What we've done there is allowed you to pick your own namespace for your button (this is useful if you, for example, need to use our Buttons with [Zurb Foundation](http://foundation.zurb.com/) which uses `.button`, or [Twitter Bootstrap](http://getbootstrap.com/2.3.2/) which opts for the class `.btn`; simply use a different class and you'll prevent any chance of a collision).
+Modules start with a _base class_ that acts as the module's *namespace*. So a Button module's base class might be represented by `.button` or `.btn`. In fact, if you'd like a very visual representation of this idea, go to our own [Buttons library](http://alexwolfe.github.io/Buttons/) and click the Customize button. This will open a popup. In this popup you'll notice the input labeled *Namespace*. By default it's just `.button`. Try entering your own base class name like `.my-button`. If you submit this, you will see that the code snippets on the page will update to reflect your new custom base class.
+
+What we've done there is allowed you to pick your own namespace for your button (this is useful if you, for example, need to use Buttons with [Zurb Foundation](http://foundation.zurb.com/) which uses `.button`, or [Twitter Bootstrap](http://getbootstrap.com/2.3.2/) which opts for the class `.btn`; simply use a different class and you'll prevent any chance of a collision).
+
+From within this base class you will define only the shared behaviors of our module. For example, for the Button module, you may wish to set things like the background and text colors, general *box-model* properties, font and perhaps border. Think of this base class as your default version of the module.
+
+```css
+.button {
+  background-color: #eeeeee;
+  display: inline-block;
+  border: 1px solid #d4d4d4;
+  height: 32px;
+  line-height: 30px;
+  padding: 0px 25.6px;
+  font-weight: 300;
+  font-size: 16px;
+  font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #666666;
+  text-shadow: 0 1px 1px white;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+}
+/* ...hover, focus, active states omitted for brevity */
+```
+
+We've purposely omitted a couple of css3 properties to make the example easier to digest. We can see that this is the "boiler-plate" of our button and will act as a sensible default. Next we can extend this base with more interesting styles. Let's look at that next.
 
 ### Module Sub-Classes
 
@@ -56,3 +91,4 @@ Another term that you'll see for this is [Depth of Applicability](https://smacss
 TBD
 
 ## TODO Selector performance...right to left browser reads etc.
+
