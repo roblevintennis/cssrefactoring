@@ -4,7 +4,7 @@
   <title><![CDATA[CSS Refactoring]]></title>
   <link href="http://roblevintennis.github.io/cssrefactoring/atom.xml" rel="self"/>
   <link href="http://roblevintennis.github.io/cssrefactoring/"/>
-  <updated>2014-08-10T09:20:10-07:00</updated>
+  <updated>2014-08-13T20:27:43-07:00</updated>
   <id>http://roblevintennis.github.io/cssrefactoring/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -57,6 +57,10 @@ With these checks and refactoring I got rid of about 10% of our stylesheets, whi
 <h4>stylestats</h4>
 
 <p>Applying these tools to legacy styles</p>
+
+<h2>Case Study: Buttons</h2>
+
+<h2>Case Study: TBD–some open source refactor???</h2>
 
 <h2>Safely Refactoring</h2>
 

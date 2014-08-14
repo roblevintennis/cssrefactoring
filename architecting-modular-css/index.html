@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Architecting Modular Css - CSS Refactoring</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Architecting Modular Css Achieving CSS Nirvana If we&rsquo;re going to refactor crufty legacy code into maintainable works of art, we need to have &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://roblevintennis.github.io/cssrefactoring/architecting-modular-css">
+  <link href="/cssrefactoring/favicon.png" rel="icon">
+  <link href="/cssrefactoring/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/cssrefactoring/atom.xml" rel="alternate" title="CSS Refactoring" type="application/atom+xml">
+  <script src="/cssrefactoring/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/cssrefactoring/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/cssrefactoring/">CSS Refactoring</a></h1>
+  
+    <h2>Alex Wolfe, Rob Levin, Trever Yarrish</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/cssrefactoring/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:roblevintennis.github.io/cssrefactoring" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/cssrefactoring/">Blog</a></li>
+  <li><a href="/cssrefactoring/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Architecting Modular Css</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-13T06:47:00-07:00" pubdate data-updated="true"></time></p>
+  </header>
+  
+  <h1>Achieving CSS Nirvana</h1>
+
+<p>If we&rsquo;re going to refactor crufty legacy code into maintainable works of art, we need to have an idea on what exactly is &ldquo;good CSS&rdquo;? Two resources which help with this question are: <a href="http://oocss.org/">OOCSS</a> and <a href="https://smacss.com/">SMACSS</a>. If you haven&rsquo;t had a chance to read up on those we highly recommend that you do so. In this section we will paraphrase some of the more useful ideas in these systems while adding our own spin on what makes CSS more reusable and maintainable.</p>
+
+<p><em>These concepts are abstract in nature so don&rsquo;t worry if you don&rsquo;t fully understand them here–we will delve deeper with examples in subsequent chapters.</em></p>
+
+<h2>CSS Systems</h2>
+
+<p>Provide an overview and discuss how the combination of modules, layouts, states, etc., etc., create a complete CSS System for a web site or application. <strong>TBD</strong></p>
+
+<h2>Modules</h2>
+
+<p>Essentially, a module is an abstract representation of a distinct component such as a button, icon, media box, etc. There&rsquo;s been a ton of writing in the community on the topic and you may have heard of similar ideas such as: Brad Frost&rsquo;s notion of <a href="http://bradfrostweb.com/blog/post/atomic-web-design/">atoms and molecules</a>, Stephen Hay&rsquo;s notion of <a href="http://bradfrostweb.com/blog/mobile/bdconf-stephen-hay-presents-responsive-design-workflow/">designing a system of components </a>, or Nicole Sullivan&rsquo;s notion of <a href="https://github.com/stubbornella/oocss/wiki#whats-a-css-object">CSS Objects</a>. What are the common benefits of all of these ideas? Here are some:</p>
+
+<ul>
+<li><strong>Reusability:</strong> A module can be used anywhere on layouts and pages</li>
+<li><strong>Modules can be nested:</strong> As alluded to in the last point, a module can nest other modules within it. These are often interchangibly referred to a sub-modules or sub-components</li>
+<li><strong>Modularity:</strong> Major sub-components of your module can be extracted and used in other components. For example, you could imagine the dropdown portion of a menu module being extracted out for use on a search autocomplete module when results are shown</li>
+<li><strong>DRY:</strong> We don&rsquo;t duplicate our CSS code</li>
+<li><strong>SRP:</strong> SRP stands for Single Responsibility Principle and, essentially, states that a module should <em>do one thing well</em> <strong>NEEDS CITATION</strong>. So, for example, we don&rsquo;t convoluate an autocomplete search module with header navbar structural CSS</li>
+<li><strong>Orthogonality:</strong> Russ Weakley states beautifully that modules must be <a href="http://www.slideshare.net/maxdesign/css-oocss-and-smacss">&ldquo;location agnostic&rdquo;</a> in that they are independent of the location of their use. This notion works in tandem with SRP</li>
+<li><strong>Encapsulation:</strong> With SRP and orthogonality we also achieve encapsulation as well</li>
+</ul>
+
+
+<p><em>If you&rsquo;re coming from a programming background you&rsquo;ll be happy to know that you can leverage some of the ideas you&rsquo;ve already learned!</em></p>
+
+<h2>How are modules implemented?</h2>
+
+<h3>Module Namespace</h3>
+
+<p>Modules start with a <em>base class</em> that acts as the module&rsquo;s <em>namespace</em>. So a Button module&rsquo;s base class might be represented by <code>.button</code> or <code>.btn</code>. In fact, if you&rsquo;d like a very visual representation of this idea, go to our own <a href="http://alexwolfe.github.io/Buttons/">Buttons library</a> and click the Customize button. This will open a popup. In this popup you&rsquo;ll notice the input labeled <em>Namespace</em>. By default it&rsquo;s just <code>.button</code>. Try entering your own base class name like <code>.my-button</code>. If you submit this, you will see that the code snippets on the page will update to reflect your new custom base class.</p>
+
+<p>What we&rsquo;ve done there is allowed you to pick your own namespace for your button (this is useful if you, for example, need to use Buttons with <a href="http://foundation.zurb.com/">Zurb Foundation</a> which uses <code>.button</code>, or <a href="http://getbootstrap.com/2.3.2/">Twitter Bootstrap</a> which opts for the class <code>.btn</code>; simply use a different class and you&rsquo;ll prevent any chance of a collision).</p>
+
+<p>From within this base class you will define only the shared behaviors of our module. For example, for the Button module, you may wish to set things like the background and text colors, general <em>box-model</em> properties, font and perhaps border. Think of this base class as your default version of the module.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.button</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#d4d4d4</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">32px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">line-height</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">padding</span><span class="o">:</span> <span class="m">0px</span> <span class="m">25.6px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="m">300</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s2">&quot;Helvetica Neue Light&quot;</span><span class="o">,</span> <span class="s2">&quot;Helvetica Neue&quot;</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="s2">&quot;Lucida Grande&quot;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#666666</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">1px</span> <span class="nb">white</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* ...hover, focus, active states omitted for brevity */</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We&rsquo;ve purposely omitted a couple of css3 properties to make the example easier to digest. We can see that this is the &ldquo;boiler-plate&rdquo; of our button and will act as a sensible default. Next we can extend this base with more interesting styles. Let&rsquo;s look at that next.</p>
+
+<h3>Module Sub-Classes</h3>
+
+<p>Once you&rsquo;ve defined a base class, you can extend the functionality of your module with the use of sub-classes. Again, referring to our <a href="http://alexwolfe.github.io/Buttons/">Buttons</a>, you will note that flat buttons use the sub-class <code>button-flat</code>, rounded buttons <code>button-rounded</code>, pills <code>button-pill</code> and so on. These are sub-classes. This brings us to an important programming concept at play that is generally credited to <a href="http://en.wikipedia.org/wiki/Open/closed_principle#Meyer.27s_open.2Fclosed_principle">Bertrand Meyer&rsquo;s open/closed principle</a> that states that entities (modules in our case):</p>
+
+<blockquote><p>should be open for extension, but closed for modification</p></blockquote>
+
+<p>So the idea, is that we put all of our shared behavior in the base class and then extend this base functionality with sub-classes that add further behaviors. We can continue to extend the core functionality with extensions thus complying with Open/Closed. <em>See Wikipedia&rsquo;s article on the <a href="http://en.wikipedia.org/wiki/Open/closed_principle">Open/Closed Principle</a> for more information on this idea.</em></p>
+
+<h3>Module Configurability</h3>
+
+<p>While most of the information provided here is derivitive, I haven&rsquo;t seen a CSS best practices guide that speaks to module configurability. <strong>TODO: Show examples in the buttons _options.scss that speak to how you can configure only the button types you want with the Sass list there</strong></p>
+
+<h4>Further Reading on Modules</h4>
+
+<p>If you haven&rsquo;t already, you should definitely take a look at what Jonathan Snooks has to say about <a href="https://smacss.com/book/type-module">Modules</a>, and here&rsquo;s a very nice <a href="http://thesassway.com/advanced/modular-css-an-example">example-driven article</a> on modular CSS. Also note that there&rsquo;s a definite overlap between the ideas of modules and OOCSS&rsquo;s notion of CSS Objects.</p>
+
+<h2>States</h2>
+
+<p>TBD is-foo etc.</p>
+
+<h2>Shallow Selectors</h2>
+
+<p>Another term that you&rsquo;ll see for this is <a href="https://smacss.com/book/applicability">Depth of Applicability</a> and it, essentially states:</p>
+
+<p>TBD</p>
+
+<h2>TODO Selector performance&hellip;right to left browser reads etc.</h2>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-13T06:47:00-07:00" pubdate data-updated="true"></time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://roblevintennis.github.io/cssrefactoring/architecting-modular-css/index.html" data-via="" data-counturl="http://roblevintennis.github.io/cssrefactoring/architecting-modular-css/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/cssrefactoring/blog/2014/08/10/ideas-for-book/">Ideas for Book</a>
+      </li>
+    
+      <li class="post">
+        <a href="/cssrefactoring/blog/2014/08/10/markdown-cheat-sheet/">Markdown: Cheat Sheet</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
