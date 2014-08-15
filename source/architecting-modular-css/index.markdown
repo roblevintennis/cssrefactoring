@@ -84,6 +84,12 @@ If you haven't already, you should definitely take a look at what Jonathan Snook
 
 TBD is-foo etc.
 
+## JavaScript
+
+If you're able to get team-wide consensus (not always an easy thing), there should be an agreement on what things get targeted by JavaScript. Generally, you should try to avoid having CSS classes–meant for styling, structure, or skin–from being targetted inappropriately by JavaScript code. The reason for this, is that it makes it much more difficult to later refactor such classes without inevitibaly borking a JavaScript spec, or, even worse, functionality in the core JavaScript code itself. Some teams even decide that classes meant to act as JavaScript hooks should be prefixed with `js-` to signify to future readers that this code should not be meant for styling, but to act as a logic hook. Conversely, IDs should really never be targetted from CSS, as they are even more ripe to act as JavaScript hooks (of course, there are other problems with having IDs in your CSS–namely that you'll never get any sort of reuse and you'll drive the selector specificity way up!)
+
+Establishing a team-wide convention early on is great if you're dealing with a greenfield project. If not, you have to exercise your "search-fu" to find any potential JavaScript breakage. In project where there's intermingling of DOM and server-side code, such as a Ruby on Rails application that renders ERB pages, you'll have to search there as well. See  *TODO some other section that goes in to search/replace more deeply*
+
 ## Shallow Selectors
 
 Another term that you'll see for this is [Depth of Applicability](https://smacss.com/book/applicability) and it, essentially states:
